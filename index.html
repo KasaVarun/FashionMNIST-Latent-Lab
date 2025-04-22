@@ -606,18 +606,18 @@
         ];
         
         // Load the pre-generated data
-        async function loadPreGeneratedData() {
-            try {
-                const classExamples = await fetch('./github_pages_assets/class_examples.json').then(res => res.json());
-                const interpolationData = await fetch('./github_pages_assets/interpolation_data.json').then(res => res.json());
-                const traversalData = await fetch('./github_pages_assets/traversal_data.json').then(res => res.json());
-                
-                return { classExamples, interpolationData, traversalData };
-            } catch (error) {
-                console.error('Error loading pre-generated data:', error);
-                return null;
-            }
-        }
+       async function loadPreGeneratedData() {
+    try {
+        const classExamples = await fetch('class_examples.json').then(res => res.json());
+        const interpolationData = await fetch('interpolation_data.json').then(res => res.json());
+        const traversalData = await fetch('traversal_data.json').then(res => res.json());
+        
+        return { classExamples, interpolationData, traversalData };
+    } catch (error) {
+        console.error('Error loading pre-generated data:', error);
+        return null;
+    }
+}
         
         // Store the data globally once loaded
         let preGeneratedData = null;
